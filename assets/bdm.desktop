@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Boring Download Manager
+GenericName=Download Manager
+Comment=Boring Download Manager (BDM) — Fast, rock-solid multi-stream download manager
+Exec=bdm %U
+Icon=bdm
+Terminal=false
+Categories=Network;FileTransfer;
+StartupNotify=true
+StartupWMClass=bdm
+MimeType=x-scheme-handler/bdm;x-scheme-handler/odm;
+Keywords=download;manager;bdm;odm;boring;accelerator;idm;xdm;
+Actions=AddUrl;
+
+[Desktop Action AddUrl]
+Name=Add New Download
+Exec=bdm gui

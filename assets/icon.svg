@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Physical Surface: Warm Charcoal / Obsidian Material -->
+    <linearGradient id="tileSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#262830"/>
+      <stop offset="100%" stop-color="#18191f"/>
+    </linearGradient>
+
+    <!-- Top Bevel Light Inset -->
+    <linearGradient id="bevelBorder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.22)"/>
+      <stop offset="30%" stop-color="rgba(255, 255, 255, 0.08)"/>
+      <stop offset="100%" stop-color="rgba(0, 0, 0, 0.45)"/>
+    </linearGradient>
+
+    <!-- Stream Core: Precision Cyan-Steel Gradient (clean, not radioactive) -->
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- Base Tray Accent -->
+    <linearGradient id="trayGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow on emblem -->
+    <filter id="emblemShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Squircle Body -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#tileSurface)" stroke="url(#bevelBorder)" stroke-width="1.25"/>
+
+  <!-- Subtle Inner Recessed Floor -->
+  <rect x="14" y="14" width="100" height="100" rx="22" fill="#14151a" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Architectural Multi-Segment Downward Velocity Mark -->
+  <g filter="url(#emblemShadow)" transform="translate(64, 62)">
+    <!-- Parallel Multi-Stream Rails (The IDM Segment Concept) -->
+    <rect x="-24" y="-32" width="6" height="26" rx="3" fill="#334155" opacity="0.9"/>
+    <rect x="-12" y="-32" width="6" height="34" rx="3" fill="#38bdf8"/>
+    <rect x="0" y="-32" width="6" height="38" rx="3" fill="#60a5fa"/>
+    <rect x="12" y="-32" width="6" height="34" rx="3" fill="#38bdf8"/>
+    <rect x="24" y="-32" width="6" height="26" rx="3" fill="#334155" opacity="0.9"/>
+
+    <!-- Sharp Precision Arrowhead -->
+    <path d="M-28 6 L0 30 L28 6 L18 6 L0 21 L-18 6 Z" fill="url(#streamGrad)"/>
+
+    <!-- Solid Retention Tray / Base Plate -->
+    <path d="M-36 26 L-36 34 C-36 37 -33 40 -30 40 L30 40 C33 40 36 37 36 34 L36 26 L28 26 L28 32 C28 33 27 34 26 34 L-26 34 C-27 34 -28 33 -28 32 L-28 26 Z" fill="url(#trayGrad)"/>
+  </g>
+</svg>
