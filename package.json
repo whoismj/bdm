@@ -1,0 +1,11 @@
+{
+  "name": "bdm",
+  "version": "2.0.0",
+  "description": "Boring Download Manager (BDM) — Fast, rock-solid multi-stream download manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "whoismj",
+  "license": "MIT"
+}
