@@ -1,0 +1,12 @@
+[Unit]
+Description=Boring Download Manager (BDM) Desktop & Daemon
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bdm gui
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
