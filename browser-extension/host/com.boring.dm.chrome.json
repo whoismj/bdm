@@ -1,0 +1,9 @@
+{
+  "name": "com.boring.dm",
+  "description": "Boring Download Manager Native Messaging Host",
+  "path": "/usr/lib/bdm/browser-extension/host/bdm-native-host",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://*/*"
+  ]
+}

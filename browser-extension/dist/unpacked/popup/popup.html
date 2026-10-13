@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boring Download Manager (BDM)</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-shell">
+
+    <!-- Header Chrome -->
+    <header class="popup-header">
+      <div class="header-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v13M5 10l7 7 7-7"/>
+            <path d="M4 19h16"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">BDM</span>
+          <span class="brand-tag">v2.0</span>
+        </div>
+      </div>
+      <div class="status-pill status-standby" id="status-pill">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Quick Add Form -->
+    <section class="section-card">
+      <div class="input-row">
+        <input type="text" id="input-url" class="popup-input" placeholder="Paste URL or media link..." spellcheck="false" autocomplete="off">
+        <button class="btn-paste" id="btn-paste" title="Paste from clipboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="8" y="2" width="8" height="4" rx="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+          </svg>
+        </button>
+      </div>
+      <div class="add-action-row">
+        <select id="select-category" class="popup-select">
+          <option value="">Auto Category</option>
+          <option value="Compressed">Compressed</option>
+          <option value="Video">Video</option>
+          <option value="Music">Music</option>
+          <option value="Documents">Documents</option>
+          <option value="Programs">Programs</option>
+          <option value="Images">Images</option>
+        </select>
+        <button class="btn-primary" id="btn-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          <span>Download</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Live Metrics Strip -->
+    <section class="metrics-strip">
+      <div class="metric-item">
+        <span class="metric-label">GLOBAL SPEED</span>
+        <span class="metric-value font-mono" id="metric-speed">0.0 KB/s</span>
+      </div>
+      <div class="metric-sep"></div>
+      <div class="metric-item">
+        <span class="metric-label">ACTIVE JOBS</span>
+        <span class="metric-value font-mono" id="metric-active">0 Active</span>
+      </div>
+    </section>
+
+    <!-- Feature Switches -->
+    <section class="settings-list">
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-title">Intercept Browser Downloads</span>
+          <span class="setting-sub">Reroute all downloads to BDM</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-intercept" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-title">Smart Media Sniffer</span>
+          <span class="setting-sub">Show download pill on video pages</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-video" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-title">Instant Transfer</span>
+          <span class="setting-sub">Start transfers immediately</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-autostart" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Footer Chrome -->
+    <footer class="popup-footer">
+      <button class="btn-secondary btn-full" id="btn-open-gui">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-btn-icon">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        <span>Open BDM App Window</span>
+      </button>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

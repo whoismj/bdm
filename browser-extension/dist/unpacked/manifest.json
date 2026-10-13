@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Boring Download Manager (BDM)",
+  "short_name": "BDM",
+  "version": "2.0.0",
+  "description": "Rock-solid multi-stream download acceleration and media grabber for Boring Download Manager.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtkReolvDExXVClL+umHm2PnKpqDxetxLgUD8mZcq6uObYAAXYfMvtl6g/+zqX+sFxK3IP+/t80miYZR6IU8/LqzvLVWmOUHq0AabYQrKVcoGQPKS8e3pwLeBDVQfpqYuzzCg+AknKrG51Oa4ihx+0XfWZNkAsmY+jIkN76c2HmMFgWPYabymyrxiYYLxvdvfzBUL9kctsVGsAj7HJg5Z8lBpMZPc8Sgjt6T0Jh8SqhPpAVFw5v/efQhULOVwn6D0CNRscrHP9szQIlt7MuAKTDdELIYOfR+qdKe6kC51Iqia+nHLcd7p52MvwOgnXXfLrXJzJ1uFzxI1iavlXDjoXQIDAQAB",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bdm-extension@omarchy.org",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": [
+    "downloads",
+    "contextMenus",
+    "nativeMessaging",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Boring Download Manager (BDM)",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "popup/popup.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup/*", "icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
